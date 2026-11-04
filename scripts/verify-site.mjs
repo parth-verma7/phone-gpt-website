@@ -1,7 +1,8 @@
 import { readFileSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import assert from 'node:assert/strict';
-const base='/phone-gpt-website', site='https://parth-verma7.github.io'+base;
+const base=process.env.NEXT_PUBLIC_BASE_PATH ?? '/phone-gpt-website';
+const site=(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://parth-verma7.github.io/phone-gpt-website').replace(/\/+$/, '');
 const routes=['','features','models','get-started','downloads','faq','privacy','contact','about','changelog'];
 const titles=new Set(), descriptions=new Set();let links=0,assets=0;
 for(const route of routes){

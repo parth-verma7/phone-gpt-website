@@ -7,7 +7,7 @@ export function canonicalUrl(path: string): string {
     throw new Error('SEO paths must be app-relative paths without a query or fragment.');
   }
   const normalizedPath = path === '/' ? '/' : `${path.replace(/\/+$/, '')}/`;
-  // SITE_URL already includes the GitHub Pages basePath; do not add it again.
+  // SITE_URL includes any deployment base path; do not add it again.
   return `${SITE_URL.replace(/\/+$/, '')}${normalizedPath}`;
 }
 

@@ -29,3 +29,13 @@ Review notes: [design](docs/DESIGN_REVIEW.md), [SEO](docs/SEO_REVIEW.md), [verif
 ## Navigation and layout update — 2026-11-04
 
 The main header now links to Home, Features, Models, Get started, FAQ and Downloads as homepage sections. An expandable searchable catalog, shared FAQ list and download panel keep these tasks on one page; detail pages remain directly accessible and have a Back to Home shortcut. Detail-page spacing is compact, and callouts sit inside centered wrappers. The phone illustration retains a sample-conversation accessible label; its visible illustration disclaimer and offline badge were removed at the owner’s request. It is not represented as an actual screenshot.
+
+## Cloudflare Pages deployment
+
+Cloudflare Pages URL: https://phone-gpt.pages.dev/
+
+Cloudflare Pages is an additional hosting target; GitHub Pages remains supported with the default configuration. First deployment uses a direct upload of the static export. GitHub pushes do not automatically update this Pages project; rebuild and upload a new export to publish changes. No Cloudflare deployment is complete until publishing and live verification.
+
+Connect the `phone-gpt-website` repository and production branch `main`. Use the static Next.js export, not server-side Functions. Build command: `npm run build && npm run verify`; output directory: `out`; Node version: `22`. Set `NEXT_PUBLIC_BASE_PATH` to an empty string (root hosting) and `NEXT_PUBLIC_SITE_URL` to the actual production HTTPS URL assigned by Cloudflare, without a trailing slash. These public build settings contain no secrets. Never guess the assigned subdomain or publish credentials. The same environment settings must be present for both build and verification.
+
+Keep the APK download on the existing public GitHub Release and the Formspree endpoint unchanged. Before marking Cloudflare live, check all page routes, homepage anchor navigation, images, contact-form hydration, sitemap/canonical URLs and narrow/mobile layout. Do not send a real contact message during automated verification. Update the hosting privacy disclosure before making Cloudflare the public destination.

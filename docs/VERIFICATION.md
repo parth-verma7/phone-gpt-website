@@ -42,3 +42,8 @@ Palette follow-up: the One app / More possibilities band now uses the same pale 
 Owner supplied https://formspree.io/f/mljjawvn. Contact form now posts name/email/topic/message directly, disables duplicate clicks, clears only on confirmed acceptance and preserves drafts after errors/timeouts. Privacy notice now discloses Formspree processing. Tests must mock delivery; no real message should be sent during automated verification. Existing email-handoff notes above describe the earlier implementation.
 
 Direct-form verification: production build and TypeScript passed. Isolated component-handler checks mocked confirmed success, HTTP failure, offline rejection and malformed response; drafts cleared only after confirmed acceptance. No external submission was made.
+
+## Cloudflare preparation
+Build-time base path and canonical origin are configurable for Cloudflare root hosting while GitHub Pages defaults are preserved. Deployment is pending owner Cloudflare sign-in and live verification.
+
+Both root-hosted output (reserved `.invalid` origin for validation only) and default GitHub Pages output passed production builds and all ten-route/link/asset/canonical checks. No Cloudflare site has been published yet.

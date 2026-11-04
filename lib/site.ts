@@ -1,5 +1,5 @@
-export const BASE_PATH = '/phone-gpt-website';
-export const SITE_URL = 'https://parth-verma7.github.io/phone-gpt-website';
+export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '/phone-gpt-website';
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://parth-verma7.github.io/phone-gpt-website').replace(/\/+$/, '');
 export const APP_REPOSITORY = 'https://github.com/parth-verma7/phone-gpt';
 export const CONTACT_EMAIL = 'tensor0712@gmail.com';
 export const APP_VERSION = '0.5.3';
