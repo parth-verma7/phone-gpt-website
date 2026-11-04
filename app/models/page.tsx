@@ -7,7 +7,7 @@ export const metadata = pageMetadata('Model library', 'Explore PhoneGPT’s mode
 
 export default function ModelsPage() {
   return (
-    <>
+    <div className="detail-page models-page">
       <PageIntro eyebrow="The model library" title="Find a model that fits your phone.">
         <p>Explore the chat models in PhoneGPT. Start small, compare families, and choose what works for your device.</p>
         <Link className="button button-primary" href="/downloads/">Get PhoneGPT</Link>
@@ -18,7 +18,7 @@ export default function ModelsPage() {
           <p className="eyebrow">A starting point</p>
           <h2 id="starting-point">Qwen 3.5 0.8B, marked Preferred.</h2>
           <p className="lead">The app’s preferred chat model has an approximately 0.59 GB file. It is a suggested place to start. Speed and compatibility vary by phone.</p>
-          <p>To use a model, <Link className="text-link" href="/downloads/">get the app</Link>, then download and load it inside PhoneGPT. Explore the choices here, then download your model inside PhoneGPT.</p>
+          <p>Choose a model here, then <Link className="text-link" href="/#download">get the app</Link> to download and load it on your phone.</p>
         </div>
       </section>
 
@@ -54,6 +54,6 @@ export default function ModelsPage() {
           <Link className="button button-secondary" href="/downloads/">Get the app to choose a model</Link>
         </div>
       </section>
-    </>
+    </div>
   );
 }

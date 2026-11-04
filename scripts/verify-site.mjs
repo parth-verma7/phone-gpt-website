@@ -22,16 +22,21 @@ for(const route of routes){
   const resource=decodeURIComponent(href.slice(base.length).split(/[?#]/)[0]); let file=join('out',resource);
   if(resource.endsWith('/'))file=join(file,'index.html');else if(!existsSync(file)&&!resource.split('/').pop().includes('.'))file=join(file,'index.html');
   assert(existsSync(file)&&statSync(file).isFile(),`Missing output ${path}: ${href}`);
-  if(match[0].startsWith('<a'))links++;else assets++;
+  if(match[0].startsWith('<a')){
+   links++;
+   const fragment=href.split('#')[1];
+   if(fragment)assert(readFileSync(file,'utf8').includes(`id="${decodeURIComponent(fragment)}"`),`Missing section target ${path}: ${href}`);
+  }else assets++;
  }
 }
 const sitemap=readFileSync('out/sitemap.xml','utf8');const urls=[...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);
 assert.equal(new Set(urls).size,10);for(const route of routes)assert(urls.includes(`${site}/${route?route+'/':''}`));
 assert(existsSync('out/.nojekyll'));assert(existsSync('out/social-card.png'));assert(existsSync('out/favicon.png'));
-const home=readFileSync('out/index.html','utf8');assert(home.includes('application/ld+json'));assert(home.includes('founder-name'));assert(home.includes('A model I’d love to use'));
+const home=readFileSync('out/index.html','utf8');assert(home.includes('application/ld+json'));for(const id of ['home','features','models','get-started','faq','download','say-hello'])assert(home.includes(`id="${id}"`),`Homepage section missing: ${id}`);assert(home.includes('founder-name'));assert(home.includes('A model I’d love to use'));
 for(const path of ['out/index.html','out/contact/index.html']){const html=readFileSync(path,'utf8');assert(/<fieldset[^>]*disabled=/.test(html),'Contact fields must be disabled in pre-hydration HTML');assert(!html.includes('@gmail.com'),'Inbox addresses must not be printed in public HTML');assert(!/<a[^>]*href="mailto:/.test(html),'Printed email links must be replaced by the form');}
 assert.equal(readFileSync('lib/site.ts','utf8').match(/CONTACT_EMAIL = '([^']+)'/)[1],'tensor0712@gmail.com');
 assert(home.includes('https://www.linkedin.com/in/parth-verma-226007228/'),'Direct LinkedIn profile missing');
 assert(home.includes('Contribute on GitHub'),'Contribution link missing');
+for(const route of routes.filter(Boolean))assert(readFileSync(join('out',route,'index.html'),'utf8').includes('Back to Home'),`Missing Home shortcut ${route}`);
 const privacy=readFileSync('out/privacy/index.html','utf8');assert(privacy.includes('backup'));
 console.log(`PASS: ${routes.length} routes, unique metadata/canonicals, H1/main landmarks, ${links} internal links and ${assets} asset references, sitemap, JSON-LD, contact form and static assets.`);

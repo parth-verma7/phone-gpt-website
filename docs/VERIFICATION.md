@@ -29,3 +29,9 @@ A separate reviewer scanned every public page for developer-level copy. The pare
 Final branding revision: Say hello replaces public founder/developer titles. Attribution is “Curious mind. Problem solver.” LinkedIn uses the direct profile URL; project contributions link to the mobile app GitHub repository. The email address is not printed on public pages.
 
 All ten routes were checked at 320 CSS pixels. Nine fit the content width; a small homepage illustration overflow was found and clipped within its figure, keeping the illustrative caption visible. This is a specific reflow check, not full accessibility certification.
+
+## Layout and homepage navigation update
+
+Fixed the Features offline-use callout losing centered alignment when it shared the wrapper class. Added compact detail-page rhythm and reduced the Models recommendation/catalog spacing. Header links now target homepage sections, including a searchable catalog disclosure, shared full FAQ and actual Android download panel. Every detail page exposes Back to Home. Static checks now validate all internal fragment targets and required section/Home shortcuts. The illustration’s visible caption and offline badge were removed at the owner’s request, retaining an accessible sample-conversation description. Browser and deployed checks are recorded with this update.
+
+Layout verification completed: production build/TypeScript pass; all ten route checks pass with 223 internal links and 133 asset references, including fragment IDs and detail-page Home shortcuts. Desktop measurement confirms the offline panel and page intro share left edge and width (1160 px at the tested viewport). Home/Features/Models have no horizontal overflow at 320 CSS px. Mobile Get started/Home hash navigation, the detail Back to Home link and expanding the inline 13-model library were exercised. No actual contact email was sent.

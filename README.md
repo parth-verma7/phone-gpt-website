@@ -25,3 +25,7 @@ The Android v0.5.3 standalone is an early beta, not a Play Store release. Google
 `lib/chat-models.json` is a snapshot of the mobile app catalog, not a live API. Compare with the mobile repository when updating models. Review all claims after app changes and update product/technical docs in the mobile project. Keep the privacy page aligned with app backup behavior, hosting, future SDKs and any change to form handling.
 
 Review notes: [design](docs/DESIGN_REVIEW.md), [SEO](docs/SEO_REVIEW.md), [verification](docs/VERIFICATION.md). No performance score or complete WCAG/store-compliance certification is claimed.
+
+## Navigation and layout update — 2026-11-04
+
+The main header now links to Home, Features, Models, Get started, FAQ and Downloads as homepage sections. An expandable searchable catalog, shared FAQ list and download panel keep these tasks on one page; detail pages remain directly accessible and have a Back to Home shortcut. Detail-page spacing is compact, and callouts sit inside centered wrappers. The phone illustration retains a sample-conversation accessible label; its visible illustration disclaimer and offline badge were removed at the owner’s request. It is not represented as an actual screenshot.

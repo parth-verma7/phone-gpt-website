@@ -7,7 +7,7 @@ export const metadata = pageMetadata('About PhoneGPT', 'Why PhoneGPT exists, who
 
 export default function AboutPage() {
   return (
-    <>
+    <div className="detail-page about-page">
       <PageIntro eyebrow="Why PhoneGPT" title="Useful AI. Closer to hand.">
         <p>PhoneGPT is an Android app for chatting with AI models that run on your phone. Download a model, load it, and start with whatever is on your mind.</p>
       </PageIntro>
@@ -59,7 +59,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section wrap callout" aria-labelledby="today-heading">
+      <section className="section wrap about-callout" aria-labelledby="today-heading">
         <p className="eyebrow">Where things stand</p>
         <h2 className="section-heading" id="today-heading">An Android app, still growing.</h2>
         <p className="lead">PhoneGPT is available as an Android beta, version {APP_VERSION}. Google Play and iPhone releases are not available yet.</p>
@@ -74,6 +74,6 @@ export default function AboutPage() {
         <Link className="button button-primary" href="/get-started/">Get started</Link>{' '}
         <Link className="button button-secondary" href="/features/">Explore the features</Link>
       </section>
-    </>
+    </div>
   );
 }

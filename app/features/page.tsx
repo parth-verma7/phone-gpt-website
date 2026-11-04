@@ -6,7 +6,7 @@ export const metadata = pageMetadata('Features', 'Explore on-device chat, Englis
 
 export default function FeaturesPage() {
   return (
-    <>
+    <div className="detail-page features-page">
       <PageIntro eyebrow="What you can do" title="A little help. Right on your phone.">
         <p>Write a first draft. Untangle an idea. Ask a follow-up. PhoneGPT runs downloaded AI models on your phone, with tools that keep you in control of the conversation.</p>
         <Link className="text-link" href="/get-started/">Find your first steps →</Link>
@@ -77,14 +77,13 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      <section className="section wrap callout" aria-labelledby="offline-heading">
+      <section className="section wrap" aria-labelledby="offline-heading"><div className="callout offline-callout">
         <p className="eyebrow">A useful distinction</p>
         <h2 className="section-heading" id="offline-heading">Download online. Use models locally.</h2>
         <p className="lead">After installing the app and downloading your models, chat and English voice typing work on your phone without internet.</p>
         <p>New downloads need internet. Answers can be wrong, and a local model does not fetch live information. Cloud backup and accounts are not available in the current app.</p>
-        <Link className="button button-primary" href="/get-started/">Set up PhoneGPT</Link>{' '}
-        <Link className="button button-secondary" href="/about/">Why PhoneGPT exists</Link>
-      </section>
-    </>
+        <div className="button-row"><Link className="button button-primary" href="/#get-started">Set up PhoneGPT</Link><Link className="button button-secondary" href="/about/">Why PhoneGPT exists</Link></div>
+      </div></section>
+    </div>
   );
 }
