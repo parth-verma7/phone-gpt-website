@@ -1,6 +1,6 @@
 # PhoneGPT website instructions
 
-Keep the website accurate to the mobile product. Do not claim iOS/Play availability, encryption, unlimited memory, image chat, cloud backup, popularity or customer counts without verified evidence. Keep model-file size distinct from RAM. Preserve the founder form's feedback/model-request purpose and explicit email handoff unless a real backend is intentionally added.
+Keep the website accurate to the mobile product. Do not claim iOS/Play availability, encryption, unlimited memory, image chat, cloud backup, popularity or customer counts without verified evidence. Keep model-file size distinct from RAM. Preserve the contact form’s feedback/model-request purpose and direct Formspree submission. Never claim confirmed inbox delivery; preserve drafts on errors.
 
 Use `next/link` for app-relative navigation and `asset()` for public assets so the GitHub Pages basePath is preserved. Maintain accessible semantics, keyboard navigation, reduced-motion behavior and responsive layouts. Run build/typecheck/static output verification for relevant changes and inspect desktop/mobile after visual work. Update README and the mobile project's product/technical documents for product-facing or architecture changes. Keep credentials, APKs, model weights and build output out of Git.
 

@@ -5,3 +5,5 @@ export const CONTACT_EMAIL = 'tensor0712@gmail.com';
 export const APP_VERSION = '0.5.3';
 export const asset = (path: string) => `${BASE_PATH}${path}`;
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/parth-verma-226007228/';
+
+export const CONTACT_FORM_ENDPOINT = 'https://formspree.io/f/mljjawvn';

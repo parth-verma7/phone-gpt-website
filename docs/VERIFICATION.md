@@ -37,3 +37,8 @@ Fixed the Features offline-use callout losing centered alignment when it shared 
 Layout verification completed: production build/TypeScript pass; all ten route checks pass with 223 internal links and 133 asset references, including fragment IDs and detail-page Home shortcuts. Desktop measurement confirms the offline panel and page intro share left edge and width (1160 px at the tested viewport). Home/Features/Models have no horizontal overflow at 320 CSS px. Mobile Get started/Home hash navigation, the detail Back to Home link and expanding the inline 13-model library were exercised. No actual contact email was sent.
 
 Palette follow-up: the One app / More possibilities band now uses the same pale surface, white cards, teal buttons and text palette as surrounding sections. Direct contact delivery remains pending the owner's verified form endpoint; the working email-draft action is retained until it is connected.
+
+## Direct contact submission — November 4
+Owner supplied https://formspree.io/f/mljjawvn. Contact form now posts name/email/topic/message directly, disables duplicate clicks, clears only on confirmed acceptance and preserves drafts after errors/timeouts. Privacy notice now discloses Formspree processing. Tests must mock delivery; no real message should be sent during automated verification. Existing email-handoff notes above describe the earlier implementation.
+
+Direct-form verification: production build and TypeScript passed. Isolated component-handler checks mocked confirmed success, HTTP failure, offline rejection and malformed response; drafts cleared only after confirmed acceptance. No external submission was made.
