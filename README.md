@@ -2,7 +2,9 @@
 
 Public product website for PhoneGPT, separate from the React Native mobile repository. Owner: Parth Verma. Updated 2026-11-04.
 
-Production address: https://parth-verma7.github.io/phone-gpt-website/
+Production address: https://phone-gpt.pages.dev/
+
+GitHub Pages was unpublished on November 4, 2026 and its deployment workflow disabled. Keep this repository public so GitHub Release APK downloads remain accessible.
 
 ## Product and content
 
@@ -34,7 +36,7 @@ The main header now links to Home, Features, Models, Get started, FAQ and Downlo
 
 Cloudflare Pages URL: https://phone-gpt.pages.dev/
 
-Cloudflare Pages is an additional hosting target; GitHub Pages remains supported with the default configuration. First deployment uses a direct upload of the static export. GitHub pushes do not automatically update this Pages project; rebuild and upload a new export to publish changes. Published and browser-verified on November 4, 2026 at https://phone-gpt.pages.dev/.
+Cloudflare Pages is an additional hosting target; The default configuration retains the old GitHub build path for compatibility, but GitHub Pages hosting is disabled. First deployment uses a direct upload of the static export. GitHub pushes do not automatically update this Pages project; rebuild and upload a new export to publish changes. Published and browser-verified on November 4, 2026 at https://phone-gpt.pages.dev/.
 
 Connect the `phone-gpt-website` repository and production branch `main`. Use the static Next.js export, not server-side Functions. Build command: `npm run build && npm run verify`; output directory: `out`; Node version: `22`. Set `NEXT_PUBLIC_BASE_PATH` to an empty string (root hosting) and `NEXT_PUBLIC_SITE_URL` to the actual production HTTPS URL assigned by Cloudflare, without a trailing slash. These public build settings contain no secrets. Never guess the assigned subdomain or publish credentials. The same environment settings must be present for both build and verification.
 
