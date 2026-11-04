@@ -47,3 +47,5 @@ Direct-form verification: production build and TypeScript passed. Isolated compo
 Build-time base path and canonical origin are configurable for Cloudflare root hosting while GitHub Pages defaults are preserved. Deployment is pending owner Cloudflare sign-in and live verification.
 
 Both root-hosted output (reserved `.invalid` origin for validation only) and default GitHub Pages output passed production builds and all ten-route/link/asset/canonical checks. No Cloudflare site has been published yet.
+
+Cloudflare publication succeeded November 4, 2026 at https://phone-gpt.pages.dev/. Browser inspection confirmed styled homepage, working Features navigation, root-relative links, hydrated contact controls and existing GitHub APK link. Static export checks passed for all ten routes. Terminal HTTP probes were blocked with 403, so they do not establish live route coverage. No real contact message was sent. First release uses Direct Upload, not automatic Git integration.
