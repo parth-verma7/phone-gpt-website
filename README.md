@@ -34,10 +34,12 @@ The main header now links to Home, Features, Models, Get started, FAQ and Downlo
 
 ## Cloudflare Pages deployment
 
-Cloudflare Pages URL: https://phone-gpt.pages.dev/
+Production: https://phone-gpt.pages.dev/
 
-Cloudflare Pages is an additional hosting target; The default configuration retains the old GitHub build path for compatibility, but GitHub Pages hosting is disabled. First deployment uses a direct upload of the static export. GitHub pushes do not automatically update this Pages project; rebuild and upload a new export to publish changes. Published and browser-verified on November 4, 2026 at https://phone-gpt.pages.dev/.
+GitHub Actions workflow `.github/workflows/cloudflare.yml` builds and checks each push to `main`, then uploads `out` to the existing Cloudflare Pages project `phone-gpt` using Wrangler. It can also be started manually from Actions → Deploy PhoneGPT to Cloudflare → Run workflow. Failed builds/checks do not publish. Concurrent production runs are superseded by the newest run. GitHub Pages remains disabled.
 
-Connect the `phone-gpt-website` repository and production branch `main`. Use the static Next.js export, not server-side Functions. Build command: `npm run build && npm run verify`; output directory: `out`; Node version: `22`. Set `NEXT_PUBLIC_BASE_PATH` to an empty string (root hosting) and `NEXT_PUBLIC_SITE_URL` to the actual production HTTPS URL assigned by Cloudflare, without a trailing slash. These public build settings contain no secrets. Never guess the assigned subdomain or publish credentials. The same environment settings must be present for both build and verification.
+The workflow uses Node 22 and runs `npm ci`, `npm run typecheck`, `npm run build`, and `npm run verify`. Public build settings: `NEXT_PUBLIC_BASE_PATH` is empty and `NEXT_PUBLIC_SITE_URL` is `https://phone-gpt.pages.dev`. The workflow deploys branch `main` to the existing production address; no new Pages project is required.
 
-Keep the APK download on the existing public GitHub Release and the Formspree endpoint unchanged. Before marking Cloudflare live, check all page routes, homepage anchor navigation, images, contact-form hydration, sitemap/canonical URLs and narrow/mobile layout. Do not send a real contact message during automated verification. Update the hosting privacy disclosure before making Cloudflare the public destination.
+`CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` are stored only in this repository’s encrypted GitHub Actions Secrets. The account-owned token has Pages Write permission in the owner’s Cloudflare account, not DNS/billing permissions. It is supplied only to the deployment action, not the frontend build or exported website. Never commit credentials or print them in logs. Repository maintainers with workflow editing permissions can use deployment secrets, so restrict write access. External fork pull requests do not trigger this production workflow.
+
+The first release on November 4 used Direct Upload; GitHub Actions automation replaces manual uploads without changing the URL. The APK stays on public GitHub Releases, and the Formspree contact endpoint is unchanged. Automated deployment verification status is in `docs/VERIFICATION.md`.

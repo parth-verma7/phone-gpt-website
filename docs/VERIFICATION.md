@@ -51,3 +51,6 @@ Both root-hosted output (reserved `.invalid` origin for validation only) and def
 Cloudflare publication succeeded November 4, 2026 at https://phone-gpt.pages.dev/. Browser inspection confirmed styled homepage, working Features navigation, root-relative links, hydrated contact controls and existing GitHub APK link. Static export checks passed for all ten routes. Terminal HTTP probes were blocked with 403, so they do not establish live route coverage. No real contact message was sent. First release uses Direct Upload, not automatic Git integration.
 
 Hosting consolidation November 4, 2026: GitHub Pages site deleted via GitHub API and deploy workflow disabled; website repository remains public. Cloudflare Pages is the production destination. Release assets remain public.
+
+## Automatic Cloudflare deployment — November 5, 2026
+Production workflow prepared for pushes to `main` and manual runs. Local root-hosting production build and ten-route/link/asset verification passed. Owner explicitly authorized Pages Write credential creation and encrypted GitHub Actions Secret storage. No credential was written to source or printed in output. First automated deployment is pending runtime verification; do not treat configured secrets alone as proof of a successful deployment.
