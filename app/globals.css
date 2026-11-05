@@ -21,3 +21,15 @@
 .page-intro h1{font-size:clamp(40px,4.4vw,64px);max-width:1000px}.detail-page .page-lead{font-size:17px;margin-top:20px}
 /* Keep model discovery in the same light/teal palette as the rest of the site. */
 .model-band{background:#edf2eb;color:var(--text);border-block:1px solid var(--line)}.model-band h2{color:var(--ink)}.model-band .eyebrow{color:var(--teal)}.model-band .lead{color:var(--muted)}.model-band .button-light{background:var(--teal);color:white}.model-band .button-light:hover{background:#0d5344}.model-band .stack-item{background:var(--white);border-color:var(--line)}.model-band .stack-item strong{color:var(--ink)}.model-band .stack-item div>span,.model-band .stack-foot{color:var(--muted)}.model-band .model-letter{background:var(--mint);color:var(--teal)}.model-band .tag-mint{background:var(--mint);color:var(--teal);border:1px solid #d4e4d6}
+
+/* Tinted panels share the page gutters instead of forming full-bleed bands. */
+:root{--panel-tint:#edf2eb}
+.model-band,.founder-section{background:transparent;border:0;margin-block:0;padding-block:48px}
+.model-band-inner,.founder-layout{background:var(--panel-tint);border:1px solid var(--line);border-radius:24px;padding:48px;gap:56px}
+.start-strip{background:var(--panel-tint);border-color:var(--line);border-radius:24px}
+.callout{background:var(--panel-tint);border-color:var(--line)}
+.founder-layout h2{font-size:clamp(36px,4vw,52px)}
+.founder-form,.model-stack{min-width:0}
+@media(max-width:900px){.model-band-inner,.founder-layout{gap:32px;padding:32px}}
+@media(max-width:600px){.model-band,.founder-section{padding-block:28px}.model-band-inner,.founder-layout{padding:24px;border-radius:20px;gap:28px}.model-band h2,.founder-layout h2{font-size:36px}.start-strip{padding:24px;border-radius:20px}.model-stack .stack-item{flex-wrap:wrap}.model-stack .stack-item>div{min-width:0}.model-stack .tag{margin-left:auto}}
+@media(max-width:380px){.site-header .header-inner>.button{display:none}.site-header .header-inner{gap:12px}}
