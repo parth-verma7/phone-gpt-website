@@ -57,3 +57,5 @@ Production workflow prepared for pushes to `main` and manual runs. Local root-ho
 
 ## Bounded panel alignment — November 5
 Reviewed live homepage tinted sections. Model discovery and contact previously used full-width color bands, unlike setup. All three now share bounded page gutters, tint and corner treatment. Local desktop check: left 52.5px and width 1160px for all three panels; at 320px viewport all three have left 20px and width 265px, with main scroll width equal to client width (305px). Narrow header CTA hides to prevent logo overlap. Final production build and ten-route static verification passed after the narrow-header adjustment. Browser checks at 320px confirmed the secondary header CTA is hidden; at 390px the main width and scroll width both equal 375px. Automatic publication follows.
+
+Hero guide link: live “See how it works” previously scrolled to the homepage setup section in browser verification. It now opens `/get-started/` directly, making the result explicit and retaining the Back to Home route. Build/export checks and live navigation verification accompany publication.
