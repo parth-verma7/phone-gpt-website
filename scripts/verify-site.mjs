@@ -44,4 +44,4 @@ console.log(`PASS: ${routes.length} routes, unique metadata/canonicals, H1/main 
 
 for(const route of ["", "features"]) { const html=readFileSync(join("out",route,"index.html"),"utf8"); assert(html.includes('id="web-search"'), "Web search feature section missing"); assert(html.includes("Optional web search"), "Search copy missing"); }
 assert(privacy.includes('id="web-search-privacy"') && privacy.includes("Brave Search"), "Search privacy disclosure missing");
-assert(home.includes("android-v0.5.10/PhoneGPT-v0.5.10-standalone.apk"), "Current search-capable APK missing");
+assert(home.includes("android-v0.5.11/PhoneGPT-v0.5.11-standalone.apk"), "Current search-capable APK missing");

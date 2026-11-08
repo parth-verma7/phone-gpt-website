@@ -2,7 +2,7 @@ export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '/phone-gpt-websit
 export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://parth-verma7.github.io/phone-gpt-website').replace(/\/+$/, '');
 export const APP_REPOSITORY = 'https://github.com/parth-verma7/phone-gpt';
 export const CONTACT_EMAIL = 'tensor0712@gmail.com';
-export const APP_VERSION = '0.5.10';
+export const APP_VERSION = '0.5.11';
 export const asset = (path: string) => `${BASE_PATH}${path}`;
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/parth-verma-226007228/';
 

@@ -49,3 +49,5 @@ Panel alignment (November 5): model discovery, setup and contact now use bounded
 ## Web search website update — 2026-11-08
 
 Homepage hero and a prominent shared homepage/Features section introduce optional web search. FAQs explain the Web toggle and explicit-search override; Privacy discloses the search question leaving the phone through Cloudflare/Brave while generation and saved chat history remain local. This is informational content, not a browser search/chat feature. Download and current release copy point to the verified Android 0.5.10 APK on GitHub Releases; no APK/model bytes are added to Git. Build/verify checks cover the feature section, disclosure anchor and release link.
+
+Android download updated to 0.5.11 for search-limit/reset notices and explicitly local fallback. The FAQ explains network-shared and daily service limits without treating mutable server quotas as permanent product promises.
