@@ -55,3 +55,7 @@ Android download updated to 0.5.11 for search-limit/reset notices and explicitly
 APK and release-details URLs are derived from APP_VERSION centrally in lib/site.ts and used by both homepage and Downloads. Static checks reject stale APK links on either route.
 
 Production 0.5.12 adds compact inline search activity and improved Send scrolling. APK links and static checks derive the version from the same shared constant. The owner confirmed that replies after search exhaustion are local fallbacks, so the server cap remains unchanged.
+
+## Google Search Console ownership verification
+
+The owner-provided public verification file `public/googlec5ba86e9740be291.html` is served unchanged at `https://phone-gpt.pages.dev/googlec5ba86e9740be291.html` for the URL-prefix property `https://phone-gpt.pages.dev/`. Preserve its filename/content in future builds: Google can recheck it. Export verification compares the public file with its emitted copy. Publishing the file alone does not confirm Google ownership, submit the sitemap or guarantee indexing; those steps are checked in Search Console separately.

@@ -49,3 +49,7 @@ assert(privacy.includes('id="web-search-privacy"') && privacy.includes("Brave Se
 assert(home.includes(expectedApk), "Current search-capable APK missing");
 
 for(const route of ["", "downloads"]) { const html=readFileSync(join("out",route,"index.html"),"utf8"); assert(html.includes(`href="${expectedApk}"`), `Latest APK missing on ${route || "home"}`); for(const match of html.matchAll(/href="([^"]+\.apk)"/g)) assert.equal(match[1], expectedApk, "Outdated APK link"); }
+
+const googleVerificationFile="googlec5ba86e9740be291.html";
+assert.equal(readFileSync(join("out",googleVerificationFile),"utf8"),readFileSync(join("public",googleVerificationFile),"utf8"),"Search Console verification file changed during export");
+assert.equal(readFileSync(join("public",googleVerificationFile),"utf8").trim(),`google-site-verification: ${googleVerificationFile}`);
