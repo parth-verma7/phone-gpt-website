@@ -45,3 +45,7 @@ The workflow uses Node 22 and runs `npm ci`, `npm run typecheck`, `npm run build
 The first release on November 4 used Direct Upload; GitHub Actions automation replaces manual uploads without changing the URL. The APK stays on public GitHub Releases, and the Formspree contact endpoint is unchanged. Automated deployment verification status is in `docs/VERIFICATION.md`.
 
 Panel alignment (November 5): model discovery, setup and contact now use bounded panels with the same page gutters, pale green surface, rounded corners and responsive padding. Full-width tinted bands were removed. The secondary header download action hides on very narrow screens to keep the logo/menu clear; the main download action remains available.
+
+## Web search website update — 2026-11-08
+
+Homepage hero and a prominent shared homepage/Features section introduce optional web search. FAQs explain the Web toggle and explicit-search override; Privacy discloses the search question leaving the phone through Cloudflare/Brave while generation and saved chat history remain local. This is informational content, not a browser search/chat feature. Download and current release copy point to the verified Android 0.5.10 APK on GitHub Releases; no APK/model bytes are added to Git. Build/verify checks cover the feature section, disclosure anchor and release link.

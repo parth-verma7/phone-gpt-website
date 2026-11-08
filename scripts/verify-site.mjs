@@ -41,3 +41,7 @@ assert(home.includes('Contribute on GitHub'),'Contribution link missing');
 for(const route of routes.filter(Boolean))assert(readFileSync(join('out',route,'index.html'),'utf8').includes('Back to Home'),`Missing Home shortcut ${route}`);
 const privacy=readFileSync('out/privacy/index.html','utf8');assert(privacy.includes('backup'));
 console.log(`PASS: ${routes.length} routes, unique metadata/canonicals, H1/main landmarks, ${links} internal links and ${assets} asset references, sitemap, JSON-LD, contact form and static assets.`);
+
+for(const route of ["", "features"]) { const html=readFileSync(join("out",route,"index.html"),"utf8"); assert(html.includes('id="web-search"'), "Web search feature section missing"); assert(html.includes("Optional web search"), "Search copy missing"); }
+assert(privacy.includes('id="web-search-privacy"') && privacy.includes("Brave Search"), "Search privacy disclosure missing");
+assert(home.includes("android-v0.5.10/PhoneGPT-v0.5.10-standalone.apk"), "Current search-capable APK missing");

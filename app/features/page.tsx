@@ -1,8 +1,9 @@
+import { WebSearchSection } from '@/components/WebSearchSection';
 import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import { PageIntro } from '@/components/PageIntro';
 
-export const metadata = pageMetadata('Features', 'Explore on-device chat, English voice typing, TXT questions, model choice, and local conversation history in PhoneGPT.', '/features/');
+export const metadata = pageMetadata('Features', 'Explore on-device chat, optional web search, English voice typing, TXT questions and local conversation history in PhoneGPT.', '/features/');
 
 export default function FeaturesPage() {
   return (
@@ -23,6 +24,8 @@ export default function FeaturesPage() {
           <p className="muted">Saving a chat does not give the model unlimited memory. Separate chats do not share personal memory.</p>
         </div>
       </section>
+
+      <WebSearchSection />
 
       <section className="section wrap" aria-labelledby="everyday-heading">
         <p className="eyebrow">Small tools, everyday uses</p>
@@ -81,7 +84,7 @@ export default function FeaturesPage() {
         <p className="eyebrow">A useful distinction</p>
         <h2 className="section-heading" id="offline-heading">Download online. Use models locally.</h2>
         <p className="lead">After installing the app and downloading your models, chat and English voice typing work on your phone without internet.</p>
-        <p>New downloads need internet. Answers can be wrong, and a local model does not fetch live information. Cloud backup and accounts are not available in the current app.</p>
+        <p>New downloads and optional web search need internet. Turn Web on when you need online information, or keep it off for offline conversations. Answers and search results can be wrong. Cloud backup and accounts are not available in the current app.</p>
         <div className="button-row"><Link className="button button-primary" href="/#get-started">Set up PhoneGPT</Link><Link className="button button-secondary" href="/about/">Why PhoneGPT exists</Link></div>
       </div></section>
     </div>
