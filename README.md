@@ -61,3 +61,5 @@ Production 0.5.12 adds compact inline search activity and improved Send scrollin
 The owner-provided public verification file `public/googlec5ba86e9740be291.html` is served unchanged at `https://phone-gpt.pages.dev/googlec5ba86e9740be291.html` for the URL-prefix property `https://phone-gpt.pages.dev/`. Preserve its filename/content in future builds: Google can recheck it. Export verification compares the public file with its emitted copy. Publishing the file alone does not confirm Google ownership, submit the sitemap or guarantee indexing; those steps are checked in Search Console separately.
 
 Cloudflare Pages normally redirects .html assets to extensionless URLs. A targeted 200 rewrite in public/_redirects serves a byte-identical .txt copy at the exact Google .html URL, avoiding that redirect. The rule applies only to the verification file; no new runtime function is needed.
+
+2026-11-09: Android 0.5.13 download and release links use the shared version constant. Homepage, Features, FAQ and changelog describe locally saved instruction versions and the permanently available original default.

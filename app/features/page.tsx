@@ -75,7 +75,7 @@ export default function FeaturesPage() {
           </article>
           <article className="feature-card">
             <h3>Shape the response.</h3>
-            <p>Save instructions for new chats, adjust reply length and how much conversation the model uses, and choose how much it reasons before answering where supported. Options depend on the model and your phone’s memory.</p>
+            <p>Save and switch between up to 50 instruction versions for new chats, with the original default always available. Existing conversations keep their original instructions. Adjust reply length and how much conversation the model uses, and choose how much it reasons before answering where supported. Options depend on the model and your phone’s memory.</p>
           </article>
         </div>
       </section>
