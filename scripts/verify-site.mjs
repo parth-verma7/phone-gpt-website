@@ -53,3 +53,6 @@ for(const route of ["", "downloads"]) { const html=readFileSync(join("out",route
 const googleVerificationFile="googlec5ba86e9740be291.html";
 assert.equal(readFileSync(join("out",googleVerificationFile),"utf8"),readFileSync(join("public",googleVerificationFile),"utf8"),"Search Console verification file changed during export");
 assert.equal(readFileSync(join("public",googleVerificationFile),"utf8").trim(),`google-site-verification: ${googleVerificationFile}`);
+
+assert.equal(readFileSync(join("out","googlec5ba86e9740be291.txt"),"utf8"),readFileSync(join("public",googleVerificationFile),"utf8"));
+assert(readFileSync("out/_redirects","utf8").includes("/googlec5ba86e9740be291.html /googlec5ba86e9740be291.txt 200"),"Verification URL must not redirect away from its exact filename");
