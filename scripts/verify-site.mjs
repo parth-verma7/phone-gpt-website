@@ -45,3 +45,6 @@ console.log(`PASS: ${routes.length} routes, unique metadata/canonicals, H1/main 
 for(const route of ["", "features"]) { const html=readFileSync(join("out",route,"index.html"),"utf8"); assert(html.includes('id="web-search"'), "Web search feature section missing"); assert(html.includes("Optional web search"), "Search copy missing"); }
 assert(privacy.includes('id="web-search-privacy"') && privacy.includes("Brave Search"), "Search privacy disclosure missing");
 assert(home.includes("android-v0.5.11/PhoneGPT-v0.5.11-standalone.apk"), "Current search-capable APK missing");
+
+const expectedApk="https://github.com/parth-verma7/phone-gpt-website/releases/download/android-v0.5.11/PhoneGPT-v0.5.11-standalone.apk";
+for(const route of ["", "downloads"]) { const html=readFileSync(join("out",route,"index.html"),"utf8"); assert(html.includes(`href="${expectedApk}"`), `Latest APK missing on ${route || "home"}`); for(const match of html.matchAll(/href="([^"]+\.apk)"/g)) assert.equal(match[1], expectedApk, "Outdated APK link"); }
