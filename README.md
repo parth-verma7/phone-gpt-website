@@ -53,3 +53,5 @@ Homepage hero and a prominent shared homepage/Features section introduce optiona
 Android download updated to 0.5.11 for search-limit/reset notices and explicitly local fallback. The FAQ explains network-shared and daily service limits without treating mutable server quotas as permanent product promises.
 
 APK and release-details URLs are derived from APP_VERSION centrally in lib/site.ts and used by both homepage and Downloads. Static checks reject stale APK links on either route.
+
+Production 0.5.12 adds compact inline search activity and improved Send scrolling. APK links and static checks derive the version from the same shared constant. The owner confirmed that replies after search exhaustion are local fallbacks, so the server cap remains unchanged.
