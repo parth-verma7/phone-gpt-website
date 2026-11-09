@@ -67,3 +67,5 @@ Cloudflare Pages normally redirects .html assets to extensionless URLs. A target
 2026-11-09 copy review: shortened repeated local/offline and model-choice claims on the homepage, removed repeated model-download badges, and retained the setup explanation beside downloads. The hero calls the feature web search; controls/privacy details remain explicit in the relevant section and standalone guides. Fresh GPT-6.1 Terra copy review informed this cleanup.
 
 Privacy policy update (2026-11-09): explicit PhoneGPT Privacy Policy heading, responsible-person identification, local/export/search-counter/contact retention, HTTPS handling and deletion-request contact mechanism. The URL remains /privacy/. No new personal-data collection or automatic correspondence-deletion mechanism was introduced.
+
+Terms of Use (2026-11-09): /terms/ covers responsible use, AI limitations, model/component licences, search limits, content/privacy, availability and non-excludable rights. Linked from the shared footer and included in the sitemap. This is product-specific explanatory wording, not a legal enforceability assessment or an implemented click-to-accept flow.

@@ -5,7 +5,7 @@ const base=process.env.NEXT_PUBLIC_BASE_PATH ?? '/phone-gpt-website';
 const releaseVersion=readFileSync('lib/site.ts','utf8').match(/APP_VERSION = '([^']+)'/)[1];
 const expectedApk=`https://github.com/parth-verma7/phone-gpt-website/releases/download/android-v${releaseVersion}/PhoneGPT-v${releaseVersion}-standalone.apk`;
 const site=(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://parth-verma7.github.io/phone-gpt-website').replace(/\/+$/, '');
-const routes=['','features','models','get-started','downloads','faq','privacy','contact','about','changelog'];
+const routes=['','features','models','get-started','downloads','faq','privacy','terms','contact','about','changelog'];
 const titles=new Set(), descriptions=new Set();let links=0,assets=0;
 for(const route of routes){
  const path=route?`/${route}/`:'/'; const html=readFileSync(join('out',route,'index.html'),'utf8');
@@ -33,7 +33,7 @@ for(const route of routes){
  }
 }
 const sitemap=readFileSync('out/sitemap.xml','utf8');const urls=[...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);
-assert.equal(new Set(urls).size,10);for(const route of routes)assert(urls.includes(`${site}/${route?route+'/':''}`));
+assert.equal(new Set(urls).size,routes.length);for(const route of routes)assert(urls.includes(`${site}/${route?route+'/':''}`));
 assert(existsSync('out/.nojekyll'));assert(existsSync('out/social-card.png'));assert(existsSync('out/favicon.png'));
 const home=readFileSync('out/index.html','utf8');assert(home.includes('application/ld+json'));for(const id of ['home','features','models','get-started','faq','download','say-hello'])assert(home.includes(`id="${id}"`),`Homepage section missing: ${id}`);assert(home.includes('founder-name'));assert(home.includes('A model I’d love to use'));
 for(const path of ['out/index.html','out/contact/index.html']){const html=readFileSync(path,'utf8');assert(/<fieldset[^>]*disabled=/.test(html),'Contact fields must be disabled in pre-hydration HTML');assert(!html.includes('@gmail.com'),'Inbox addresses must not be printed in public HTML');assert(!/<a[^>]*href="mailto:/.test(html),'Printed email links must be replaced by the form');}
@@ -56,3 +56,5 @@ assert.equal(readFileSync(join("public",googleVerificationFile),"utf8").trim(),`
 
 assert.equal(readFileSync(join("out","googlec5ba86e9740be291.txt"),"utf8"),readFileSync(join("public",googleVerificationFile),"utf8"));
 assert(readFileSync("out/_redirects","utf8").includes("/googlec5ba86e9740be291.html /googlec5ba86e9740be291.txt 200"),"Verification URL must not redirect away from its exact filename");
+
+const terms=readFileSync("out/terms/index.html","utf8");assert(terms.includes("PhoneGPT Terms of Use") && terms.includes("/privacy/") && terms.includes("contact/#say-hello"), "Terms content or links missing");assert(home.includes("/terms/"), "Footer Terms link missing");

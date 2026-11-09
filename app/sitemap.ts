@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/downloads/',
     '/faq/',
     '/privacy/',
+    '/terms/',
     '/contact/',
     '/about/',
     '/changelog/',
