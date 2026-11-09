@@ -41,7 +41,7 @@ assert.equal(readFileSync('lib/site.ts','utf8').match(/CONTACT_EMAIL = '([^']+)'
 assert(home.includes('https://www.linkedin.com/in/parth-verma-226007228/'),'Direct LinkedIn profile missing');
 assert(home.includes('Contribute on GitHub'),'Contribution link missing');
 for(const route of routes.filter(Boolean))assert(readFileSync(join('out',route,'index.html'),'utf8').includes('Back to Home'),`Missing Home shortcut ${route}`);
-const privacy=readFileSync('out/privacy/index.html','utf8');assert(privacy.includes('backup'));
+const privacy=readFileSync('out/privacy/index.html','utf8');assert(privacy.includes('backup'));assert(privacy.includes('PhoneGPT Privacy Policy') && privacy.includes('id="data-retention"') && privacy.includes('id="privacy-requests"'), 'Privacy policy identification/retention/request sections missing');
 console.log(`PASS: ${routes.length} routes, unique metadata/canonicals, H1/main landmarks, ${links} internal links and ${assets} asset references, sitemap, JSON-LD, contact form and static assets.`);
 
 for(const route of ["", "features"]) { const html=readFileSync(join("out",route,"index.html"),"utf8"); assert(html.includes('id="web-search"'), "Web search feature section missing"); assert(html.includes('>Web search</p>'), "Search copy missing"); }

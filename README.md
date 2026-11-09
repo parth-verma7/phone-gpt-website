@@ -65,3 +65,5 @@ Cloudflare Pages normally redirects .html assets to extensionless URLs. A target
 2026-11-09: Android 0.5.13 download and release links use the shared version constant. Homepage, Features, FAQ and changelog describe locally saved instruction versions and the permanently available original default.
 
 2026-11-09 copy review: shortened repeated local/offline and model-choice claims on the homepage, removed repeated model-download badges, and retained the setup explanation beside downloads. The hero calls the feature web search; controls/privacy details remain explicit in the relevant section and standalone guides. Fresh GPT-6.1 Terra copy review informed this cleanup.
+
+Privacy policy update (2026-11-09): explicit PhoneGPT Privacy Policy heading, responsible-person identification, local/export/search-counter/contact retention, HTTPS handling and deletion-request contact mechanism. The URL remains /privacy/. No new personal-data collection or automatic correspondence-deletion mechanism was introduced.
