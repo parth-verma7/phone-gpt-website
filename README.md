@@ -63,3 +63,5 @@ The owner-provided public verification file `public/googlec5ba86e9740be291.html`
 Cloudflare Pages normally redirects .html assets to extensionless URLs. A targeted 200 rewrite in public/_redirects serves a byte-identical .txt copy at the exact Google .html URL, avoiding that redirect. The rule applies only to the verification file; no new runtime function is needed.
 
 2026-11-09: Android 0.5.13 download and release links use the shared version constant. Homepage, Features, FAQ and changelog describe locally saved instruction versions and the permanently available original default.
+
+2026-11-09 copy review: shortened repeated local/offline and model-choice claims on the homepage, removed repeated model-download badges, and retained the setup explanation beside downloads. The hero calls the feature web search; controls/privacy details remain explicit in the relevant section and standalone guides. Fresh GPT-6.1 Terra copy review informed this cleanup.
